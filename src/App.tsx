@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+// Components
+import StandardFormExample from './components/StandardFormExample';
+import FormikExample from './components/FormikExample';
+import ReactHookFormExample from './components/ReactHookFormExample';
+
+// Styles
+import './styles/index.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header className="header">
+        <h1>Formik vs React Hook Form</h1>
       </header>
+      <div className='container'>
+        <div className='grid'>
+          <StandardFormExample />
+          <FormikExample />
+          <ReactHookFormExample />
+        </div>
+      </div>
     </div>
   );
 }
