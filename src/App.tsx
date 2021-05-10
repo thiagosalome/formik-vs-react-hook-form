@@ -1,14 +1,14 @@
-import React from 'react';
+import React from 'react'
 
 // Components
-import StandardFormExample from './components/StandardFormExample';
-import FormikExample from './components/FormikExample';
-import ReactHookFormExample from './components/ReactHookFormExample';
+import StandardFormExample from './components/StandardFormExample'
+import FormikExample from './components/FormikExample'
+import ReactHookFormExample from './components/ReactHookFormExample'
 
 // Styles
-import './styles/index.scss';
+import './styles/index.scss'
 
-function App() {
+function App () {
   return (
     <div>
       <header className="header">
@@ -22,7 +22,7 @@ function App() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

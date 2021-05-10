@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 // import { Container } from './styles';
 
@@ -29,4 +29,4 @@ const FormikExample: React.FC = () => {
   )
 }
 
-export default FormikExample;
+export default FormikExample
