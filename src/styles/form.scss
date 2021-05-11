@@ -20,6 +20,12 @@
       width: 100%;
       padding: 0 10px;
     }
+
+    .error {
+      font-size: 14px;
+      color: #ff6a6a;
+    }
+
   }
 
   button[type="submit"] {
@@ -39,5 +45,16 @@
 
   &.react-hook-form button {
     background-color: #f6008a;
+  }
+
+  .rendering {
+    margin-top: 20px;
+    background-color: #333333;
+    color: #ffffff;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 14px;
   }
 }
