@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
 import React, { ChangeEvent, FormEvent, useState } from 'react'
-import { maskPhone, onlyNumber } from '../utils/masks'
-import { validateEmail, validatePhone } from '../utils/validations'
+import { maskPhone, onlyNumber } from 'src/utils/masks'
+import { validateEmail, validatePhone } from 'src/utils/validations'
 
 type FormValues = {
   [param: string]: string;
