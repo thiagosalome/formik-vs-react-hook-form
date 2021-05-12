@@ -65,7 +65,7 @@ const FormikExample = () => {
   return (
     <form className='form' onSubmit={handleSubmit}>
       <header>
-        <h3>Padrão</h3>
+        <h3>Formik</h3>
       </header>
       <div>
         <label htmlFor='name'>Nome</label>
