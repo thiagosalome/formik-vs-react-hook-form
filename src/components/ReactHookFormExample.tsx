@@ -13,7 +13,7 @@ type FormValues = {
   phone: string;
 }
 
-const FormikExample = () => {
+const ReactHookFormExample = () => {
   const { register, handleSubmit, formState: { errors }, setValue } = useForm()
   renderingCounter++
 
@@ -22,7 +22,7 @@ const FormikExample = () => {
   }
 
   return (
-    <form className='form' onSubmit={handleSubmit(submitForm)}>
+    <form className='form react-hook-form' onSubmit={handleSubmit(submitForm)}>
       <header>
         <h3>React Hook Form</h3>
       </header>
@@ -91,4 +91,4 @@ const FormikExample = () => {
   )
 }
 
-export default FormikExample
+export default ReactHookFormExample

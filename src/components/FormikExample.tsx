@@ -19,6 +19,9 @@ const FormikExample = () => {
       email: '',
       phone: ''
     },
+    onSubmit: (formValues) => {
+      console.log('values', formValues)
+    },
     validate: (values: FormikValues) => {
       const errors: FormikErrors<FormikValues> = {}
 
@@ -26,27 +29,19 @@ const FormikExample = () => {
         if (!values[key]) {
           errors[key] = `${inputNames[key]} é um campo obrigatório`
         } else {
-          if (key === 'age') {
-            errors[key] = parseInt(values[key]) > 10 ? '' : 'A idade deve ser maior que 10'
+          if (key === 'age' && parseInt(values[key]) <= 10) {
+            errors[key] = 'A idade deve ser maior que 10'
           }
-          if (key === 'email') {
-            console.log('validateEmail(values[key])', validateEmail(values[key]))
-            errors[key] = validateEmail(values[key])
-              ? ''
-              : 'O email digitado é inválido'
+          if (key === 'email' && !validateEmail(values[key])) {
+            errors[key] = 'O email digitado é inválido'
           }
-          if (key === 'phone') {
-            errors[key] = validatePhone(values[key])
-              ? ''
-              : 'O número de telefone digitado é inválido'
+          if (key === 'phone' && !validatePhone(values[key])) {
+            errors[key] = 'O número de telefone digitado é inválido'
           }
         }
       })
 
       return errors
-    },
-    onSubmit: () => {
-      console.log('values', values)
     }
   })
   renderingCounter++
@@ -55,7 +50,6 @@ const FormikExample = () => {
     if (mask) {
       const newEvent = event
       newEvent.target.value = mask(event.target.value)
-
       handleChange(newEvent)
     } else {
       handleChange(event)
@@ -63,7 +57,7 @@ const FormikExample = () => {
   }
 
   return (
-    <form className='form' onSubmit={handleSubmit}>
+    <form className='form formik' onSubmit={handleSubmit}>
       <header>
         <h3>Formik</h3>
       </header>
@@ -73,6 +67,7 @@ const FormikExample = () => {
           type='text'
           id='name'
           name='name'
+          value={values.name}
           onChange={onChange}
         />
         <span className='error'>{errors.name}</span>
@@ -95,6 +90,7 @@ const FormikExample = () => {
           type='email'
           id='email'
           name='email'
+          value={values.email}
           onChange={onChange}
         />
         <span className='error'>{errors.email}</span>
@@ -105,6 +101,7 @@ const FormikExample = () => {
           type='tel'
           id='phone'
           name='phone'
+          value={values.phone}
           onChange={(event: ChangeEvent<HTMLInputElement>) => onChange(event, maskPhone)}
         />
         <span className='error'>{errors.phone}</span>
