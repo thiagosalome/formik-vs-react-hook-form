@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+# Formik vs React Hook Form
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Um comparativo das duas libs de formulários React mais utilizadas até o momento.
 
-## Available Scripts
+## Introdução
 
-In the project directory, you can run:
+Aqueles que já desenvolveram formulários no React através de [Controlled Components](https://reactjs.org/docs/forms.html#controlled-components) sabem o quanto pode ser trabalhoso armazenar os valores dos campos em estados. A adição de máscaras e validações então só aumentam as linhas de código e quantidade de renderizações do formulário.
 
-### `yarn start`
+Para resolver problemas como esse foram surgindo diversas libs de formulários React ao longo dos anos. Nesse artigo serão comparadas [as duas mais utilizadas até o momento](https://www.npmtrends.com/redux-form-vs-formik-vs-react-hook-form-vs-react-final-form),  [Formik](https://formik.org/) e [React Hook Form](https://react-hook-form.com/). Como critérios de comparação considerou-se o tamanho de cada uma, a quantidade de downloads, o número de dependências, performance, dentre outros. Ao final será apresentado um exemplo prático com a criação de um formulário contendo nome, idade, email e telefone, aplicando máscaras e validações.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Comparativo Técnico
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+O comparativo técnico foi desenvolvido com base na análise de dados do [npm trends](https://www.npmtrends.com/formik-vs-react-hook-form), [bundlephobia](https://bundlephobia.com/), e dos próprios repositórios das libs.
 
-### `yarn test`
+### Quantidade de downloads
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Abaixo é apresentado um gráfico com a quantidade de downloads das libs por semana no período de um ano.
 
-### `yarn build`
+![Quantidade de downloads nos últimos 3 meses](/home/thiagosalome/Projects/formik-vs-react-hook-form/github/quantidade-de-downloads.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Como se pode notar, com pouco mais de 1.400.000 downloads semanais a Formik apresenta maior popularidade comparada aos quase 800.000 downloads da React Hook Form. Considerando esse período de um ano, pode-se concluir que ambas possuem um índice bem próximo de crescimento nas quantidades de downloads, sendo que um ano atrás a Formik apresentava aproximadamente 865.000 e a React Hook Form 220.000. Na tabela abaixo podemos comparar os dados mais precisamente.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+|             |  Formik   | React Hook Form |
+| ----------- | :-------: | :-------------: |
+| Atualmente  | 1.414.310 |     797.395     |
+| 1 ano atrás |  864.294  |     220.554     |
+| Crescimento |  550.016  |     576.841     |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Curiosidade:** Eu me perguntei o porquê dessa queda brusca na quantidade de downloads no gráfico no período entre Dezembro e Janeiro. Então aumentei o período para 5 anos, e reparei que o mesmo comportamento se repetia, mais precisamente nas semanas do dia 23 de Dezembro ao dia 1 de Janeiro. Não é coincidência que sejam períodoso em que se comemoram o Natal e Ano Novo. Abaixo apresento o gráfico.
 
-### `yarn eject`
+![Quantidade de Downloads nos últimos 5 anos](/home/thiagosalome/Projects/formik-vs-react-hook-form/github/quantidade-downloads-5-anos.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Informações do Github
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Por algum motivo o npm trends não estava apresentando os dados referentes a stars, forks, issues e updated. Por isso optei por buscar os dados diretamente em cada repositório. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+|               | Formik | React Hook Form |
+| ------------- | :----: | :-------------: |
+| Watch         |  241   |       157       |
+| Star          | 27.2k  |      20.7k      |
+| Fork          |  2.2k  |       939       |
+| Issues        |  505   |        1        |
+| Pull requests |  100   |        9        |
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Novamente aqui a Formik demonstra uma maior popularidade considerando a quantidade de watches, stars e forks. Entretando a React Hook Form não fica para trás, com índices bem satisfatórios. O que chama a atenção são as 505 isues em aberto da primeira contra apenas 1 da segunda. Mesmo sabendo da popularidade da Formik perante a React Hook Form, os índices de Issues são bem discrepantes.
 
-## Learn More
+### Tamanho e composição de dependências
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Comparativo de desenvolvimento
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Comparativo de performance
