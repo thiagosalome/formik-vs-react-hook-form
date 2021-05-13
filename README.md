@@ -16,7 +16,7 @@ O comparativo técnico foi desenvolvido com base na análise de dados do [npm tr
 
 Abaixo é apresentado um gráfico com a quantidade de downloads das libs por semana no período de um ano.
 
-![Quantidade de downloads nos últimos 3 meses](/home/thiagosalome/Projects/formik-vs-react-hook-form/github/quantidade-de-downloads.png)
+![Quantidade de downloads nos últimos 3 meses](./github/quantidade-de-downloads.png)
 
 Como se pode notar, com pouco mais de 1.400.000 downloads semanais a Formik apresenta maior popularidade comparada aos quase 800.000 downloads da React Hook Form. Considerando esse período de um ano, pode-se concluir que ambas possuem um índice bem próximo de crescimento nas quantidades de downloads, sendo que um ano atrás a Formik apresentava aproximadamente 865.000 e a React Hook Form 220.000. Na tabela abaixo podemos comparar os dados mais precisamente.
 
@@ -28,7 +28,7 @@ Como se pode notar, com pouco mais de 1.400.000 downloads semanais a Formik apre
 
 **Curiosidade:** Eu me perguntei o porquê dessa queda brusca na quantidade de downloads no gráfico no período entre Dezembro e Janeiro. Então aumentei o período para 5 anos, e reparei que o mesmo comportamento se repetia, mais precisamente nas semanas do dia 23 de Dezembro ao dia 1 de Janeiro. Não é coincidência que sejam períodoso em que se comemoram o Natal e Ano Novo. Abaixo apresento o gráfico.
 
-![Quantidade de Downloads nos últimos 5 anos](/home/thiagosalome/Projects/formik-vs-react-hook-form/github/quantidade-downloads-5-anos.png)
+![Quantidade de Downloads nos últimos 5 anos](./github/quantidade-downloads-5-anos.png)
 
 ### Informações do Github
 
