@@ -10,7 +10,7 @@ Para resolver problemas como esse foram surgindo diversas libs de formulários R
 
 ## Comparativo Técnico
 
-O comparativo técnico foi desenvolvido com base na análise de dados do [npm trends](https://www.npmtrends.com/formik-vs-react-hook-form), [bundlephobia](https://bundlephobia.com/), e dos próprios repositórios das libs.
+O comparativo técnico foi desenvolvido com base na análise de dados do [npm trends](https://www.npmtrends.com/formik-vs-react-hook-form), [BundlePhobia](https://bundlephobia.com/), e dos próprios repositórios das libs.
 
 ### Quantidade de downloads
 
@@ -44,8 +44,29 @@ Por algum motivo o npm trends não estava apresentando os dados referentes a sta
 
 Novamente aqui a Formik demonstra uma maior popularidade considerando a quantidade de watches, stars e forks. Entretando a React Hook Form não fica para trás, com índices bem satisfatórios. O que chama a atenção são as 505 isues em aberto da primeira contra apenas 1 da segunda. Mesmo sabendo da popularidade da Formik perante a React Hook Form, os índices de Issues são bem discrepantes.
 
-### Tamanho e composição de dependências
+### Tamanho do bundle e composição de dependências
+
+Ao adicionar qualquer dependência em seu projeto, um fator importante de se saber é o tamanho dela e quais outras dependências estarão sendo adicionadas para o seu funcionamento. Isso porque elas se juntarão ao bundle final da sua aplicação, considerando que ela seja uma dependência para produção. Os dados abaixo são do site BundlePhobia, e apresentam o tamanho do bundle e a composição de dependências de cada lib.
+
+##### Tamanho do bundle
+
+|                    | Formik | React Hook Form |
+| ------------------ | :----: | :-------------: |
+| minified           | 44.4k  |     24.9kb      |
+| minified + gzipped | 13.1kb |      8.5kb      |
+
+##### Composição de dependências da Formik
+
+![Composição de dependências da Formik](./github/composition-formik.png)
+
+##### Composição de dependências da React Hook Form
+
+![Composição de dependências da React Hook Form](./github/composition-react-hook-form.png)
+
+Pode-se concluir que a React Hook Form venceu em ambas as métricas, tanto no tamanho do bundle, apresentando uma diferença de quase 5kb a menos se comparada com a Formik, quanto na composição de módulos, não possuindo nenhuma dependência enquanto a Formik possui 7.
 
 ## Comparativo de desenvolvimento
+
+A Formik e a React Hook Form seguem diferentes formas de implementação.
 
 ## Comparativo de performance
