@@ -18,7 +18,7 @@ Abaixo é apresentado um gráfico com a quantidade de downloads das libs por sem
 
 ![Quantidade de downloads nos últimos 3 meses](./github/quantidade-de-downloads.png)
 
-Como se pode notar, com pouco mais de 1.400.000 downloads semanais a Formik apresenta maior popularidade comparada aos quase 800.000 downloads da React Hook Form. Considerando esse período de um ano, pode-se concluir que ambas possuem um índice bem próximo de crescimento nas quantidades de downloads, sendo que um ano atrás a Formik apresentava aproximadamente 865.000 e a React Hook Form 220.000. Na tabela abaixo podemos comparar os dados mais precisamente.
+Como se pode notar, com pouco mais de 1.400.000 downloads semanais a Formik apresenta maior popularidade se comparada aos quase 800.000 downloads da React Hook Form. Considerando esse período de um ano, pode-se concluir que ambas possuem um índice bem próximo de crescimento, sendo que um ano atrás a Formik apresentava aproximadamente 865.000 e a React Hook Form 220.000. Na tabela abaixo podemos comparar os dados mais precisamente.
 
 |             |  Formik   | React Hook Form |
 | ----------- | :-------: | :-------------: |
@@ -26,7 +26,7 @@ Como se pode notar, com pouco mais de 1.400.000 downloads semanais a Formik apre
 | 1 ano atrás |  864.294  |     220.554     |
 | Crescimento |  550.016  |     576.841     |
 
-**Curiosidade:** Eu me perguntei o porquê dessa queda brusca na quantidade de downloads no gráfico no período entre Dezembro e Janeiro. Então aumentei o período para 5 anos, e reparei que o mesmo comportamento se repetia, mais precisamente nas semanas do dia 23 de Dezembro ao dia 1 de Janeiro. Não é coincidência que sejam períodoso em que se comemoram o Natal e Ano Novo. Abaixo apresento o gráfico.
+**Curiosidade:** Eu me perguntei o porquê dessa queda brusca na quantidade de downloads no gráfico no período entre Dezembro e Janeiro. Então aumentei o período para 5 anos, e reparei que o mesmo comportamento se repetia, mais precisamente nas semanas do dia 23 de Dezembro ao dia 1 de Janeiro. Não é coincidência que sejam períodos em que se comemoram o Natal e Ano Novo.
 
 ![Quantidade de Downloads nos últimos 5 anos](./github/quantidade-downloads-5-anos.png)
 
@@ -46,6 +46,8 @@ Novamente aqui a Formik demonstra uma maior popularidade considerando a quantida
 
 ### Integração e suporte
 
+Analisando a documentação das libs é possível ver que ambas apresentam suporte e integração com diversas outras linguagens, ferramentes do mundo Front-end.
+
 |              | Formik | React Hook Form |
 | ------------ | :----: | :-------------: |
 | Typescript   |  Sim   |       Sim       |
@@ -56,7 +58,7 @@ Novamente aqui a Formik demonstra uma maior popularidade considerando a quantida
 
 ### Tamanho do bundle e composição de dependências
 
-Ao adicionar qualquer dependência em seu projeto, um fator importante a se considerar é o tamanho dela e quais outras dependências estarão sendo adicionadas para o seu funcionamento. Isso porque elas se juntarão ao bundle final da sua aplicação, caso ela seja uma dependência para produção. Os dados abaixo são do site BundlePhobia, e apresentam o tamanho do bundle e a composição de dependências de cada lib.
+Ao adicionar qualquer dependência em seu projeto, um fator importante a se considerar é o tamanho dela e quais outras dependências serão adicionadas para o seu funcionamento. Isso porque elas se juntarão ao bundle final da sua aplicação, caso ela seja uma dependência para produção. Os dados abaixo são do site BundlePhobia, e apresentam o tamanho do bundle e a composição de dependências de cada lib.
 
 ##### Tamanho do bundle
 
@@ -73,7 +75,7 @@ Ao adicionar qualquer dependência em seu projeto, um fator importante a se cons
 
 ![Composição de dependências da React Hook Form](./github/composition-react-hook-form.png)
 
-Pode-se concluir que a React Hook Form venceu em ambas as métricas, tanto no tamanho do bundle, apresentando uma diferença de quase 5kb a menos se comparada com a Formik, quanto na composição de módulos, não possuindo nenhuma dependência enquanto a Formik possui 7.
+Pode-se concluir que a React Hook Form venceu em ambas as métricas, tanto no tamanho do bundle, apresentando uma diferença de quase 5kb a menos se comparada com a Formik, quanto na composição de módulos, apresentando 0 dependências contra 7 da Formik.
 
 ------
 
@@ -83,10 +85,10 @@ A Formik e a React Hook Form seguem diferentes formas de implementação de form
 
 | Campo    | Tipo  | Requisitos                                  |
 | :------- | :---- | :------------------------------------------ |
-| Nome     | text  | Obrigatório                                 |
-| Idade    | text  | Obrigatório, maior que 10                   |
-| Email    | email | Obrigatório, com formato válido de email    |
-| Telefone | tel   | Obrigatório, com formato válido de telefone |
+| Nome     | text  | obrigatório                                 |
+| Idade    | text  | obrigatório, maior que 10                   |
+| Email    | email | obrigatório, com formato válido de email    |
+| Telefone | tel   | obrigatório, com formato válido de telefone |
 
 ### Desenvolvendo um formulário com a lib Formik
 
@@ -157,7 +159,7 @@ E com ele podemos obter as seguintes variáveis e métodos:
 - `handleSubmit`: método responsável por tratar o envio do formulário
 - `handleChange`: método responsável por tratar os eventos de mudanças dos campos
 
-Para fazer o tratamento das máscaras temos que criar um método que será chamado a cada mudança nos campos do formulário. Caso ele receba por parâmetro um método responsável por adicionar máscara ao valor, então ele ele pega esse valor formatado, o altera no ChangeEvent, e o envia para o método de handleChange disponibilizado pelo `useFormik()`.
+Para fazer o tratamento das máscaras temos que criar um método que será chamado a cada mudança nos campos do formulário. Caso ele receba por parâmetro uma função para formatação de valor, então ele pega esse valor formatado, o altera no ChangeEvent, e o envia para o handleChange disponibilizado pelo `useFormik()`.
 
 ```tsx
 import React, { ChangeEvent } from 'react'
@@ -180,7 +182,7 @@ const FormikExample = () => {
 
 ```
 
-Por fim nós criamos os campos do formulário passando um método responsável pela máscara para aqueles que são necessários:
+Por fim nós criamos os campos do formulário passando as funções de formatação para os que precisam de máscara.
 
 ```tsx
 import React from 'react'
@@ -245,11 +247,11 @@ const FormikExample = () => {
 }
 ```
 
-Para o desenvolvimento do formulário foram gastas ao todo 117 linhas de código. Você pode ver o código completo [nesse link](https://github.com/thiagosalome/formik-vs-react-hook-form/blob/master/src/components/FormikExample.tsx).
+Para o desenvolvimento do formulário foram necessárias ao todo 117 linhas de código. Você pode ver o código completo [nesse link](https://github.com/thiagosalome/formik-vs-react-hook-form/blob/master/src/components/FormikExample.tsx).
 
 ### Desenvolvendo um formulário com a lib React Hook Form
 
-Da versão 6 para a versão 7 do React Hook Form ocorreram algumas mudanças na forma como fazemos o registro e recebemos os erros dos campos. Abaixo vocês podem ver a diferença:
+Da versão 6 para a versão 7 do React Hook Form ocorreram algumas mudanças no registro e no recebimento de erros dos campos. Abaixo vocês podem ver a diferença:
 
 ```tsx
 // Versão 6
@@ -292,9 +294,9 @@ const ReactHookFormExample = () => {
 - `register`: método que faz o registro de todos os campos do formulário
 - `handleSubmit`: método responsável por tratar o envio do formulário
 - `errors`: objeto com os erros de validação dos campos do formulário
-- `setValue`: método que seta os valores de um ou mais campos do formulário
+- `setValue`: método que muda os valores de um ou mais campos do formulário
 
-Após isso nós criamos o nosso formulário, fazendo o registro dos campos e utilizamos o setValue com um método de formatação para aplicar as máscaras.
+Após isso nós criamos o nosso formulário, fazendo o registro dos campos. O método `setValue` é utilizado para fazer a aplicação das máscaras.
 
 ```tsx
 import React from 'react'
@@ -376,15 +378,15 @@ const ReactHookFormExample = () => {
 }
 ```
 
-Como vocês podem observar as validações são criadas dentro de um objeto passado para o método  `register()`. O React Hook Form já disponibiliza algumas propriedades para validações, como o caso do `required` para campos obrigatórios, e o `min` para validação de números mínimos, bem semelhante [a forma padrão de validação de formulários no HTML](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#using_built-in_form_validation). Para casos mais específicos como validação de email e telefone há a propriedade `validate`.
+Como vocês podem observar, as validações são criadas dentro de um objeto passado para o método  `register()`. O React Hook Form já disponibiliza algumas propriedades para validações, como o `required` para campos obrigatórios, e o `min` para validação de números mínimos, bem semelhante [a forma padrão de validação de formulários no HTML](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#using_built-in_form_validation). Para casos mais específicos como validação de email e telefone há a propriedade `validate`.
 
-Para o desenvolvimento desse formulário foram gastas ao todo 95 linhas de código, que você pode visualizar [nesse link](https://github.com/thiagosalome/formik-vs-react-hook-form/blob/master/src/components/ReactHookFormExample.tsx).
+O desenvolvimento desse formulário gerou ao todo 95 linhas de código, que você pode visualizar [nesse link](https://github.com/thiagosalome/formik-vs-react-hook-form/blob/master/src/components/ReactHookFormExample.tsx).
 
 ------
 
 ## Comparativo de performance
 
-Um ponto importante a se considerar no desenvolvimento de qualquer componente React é a sua performance. E para medi-la nos formulários que criados na seção anterior eu defini duas métricas principais: a quantidade de renderizações que cada formulário terá enquanto o usuário estiver preenchendo-o, e o tempo gasto para o formulário ser renderizado em tela.
+Um ponto importante a se considerar no desenvolvimento de qualquer componente React é a sua performance. E para medi-la nos formulários criados na seção anterior, foram definidas duas métricas principais: a quantidade de renderizações que cada formulário terá enquanto o usuário estiver preenchendo-o, e o tempo gasto na primeira renderização do formulário em tela.
 
 Para saber a quantidade de renderizações de cada componente, eu criei uma variável com valor inicial 0 que incrementava a cada vez que formulário renderizava. Abaixo nós podemos ver o resultado de cada um:
 
@@ -396,7 +398,7 @@ Para saber a quantidade de renderizações de cada componente, eu criei uma vari
 
 ![React Hook Form - Quantidade de renderizações](./github/renderizacoes-react-hook-form.gif)
 
-Aqui claramente podemos ver que em termos de quantidade de renderização a React Hook Form se destaca se comparada a Formik.
+Aqui claramente podemos ver que em termos de quantidade de renderização a React Hook Form se destaca se comparada a Formik, tendo apenas 1 contra 74.
 
 Para calcular o tempo que cada componente leva para ser renderizado na primeira vez, eu utilizei a funcionalidade de Profiler disponibilizada pela extensão [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi).
 
