@@ -10,7 +10,7 @@ Para resolver problemas como esse foram surgindo diversas libs de formulários R
 
 ## Comparativo Técnico
 
-O comparativo técnico foi desenvolvido com base na análise de dados do [npm trends](https://www.npmtrends.com/formik-vs-react-hook-form), [BundlePhobia](https://bundlephobia.com/), e dos próprios repositórios das libs.
+O comparativo técnico foi desenvolvido com base na análise de dados do [npm trends](https://www.npmtrends.com/formik-vs-react-hook-form), [BundlePhobia](https://bundlephobia.com/), e dos próprios repositórios e sites das libs.
 
 ### Quantidade de downloads
 
@@ -44,9 +44,19 @@ Por algum motivo o npm trends não estava apresentando os dados referentes a sta
 
 Novamente aqui a Formik demonstra uma maior popularidade considerando a quantidade de watches, stars e forks. Entretando a React Hook Form não fica para trás, com índices bem satisfatórios. O que chama a atenção são as 505 isues em aberto da primeira contra apenas 1 da segunda. Mesmo sabendo da popularidade da Formik perante a React Hook Form, os índices de Issues são bem discrepantes.
 
+### Integração e suporte
+
+|              | Formik | React Hook Form |
+| ------------ | :----: | :-------------: |
+| Typescript   |  Sim   |       Sim       |
+| React Native |  Sim   |       Sim       |
+| Redux        |  Sim   |       Sim       |
+| Material UI  |  Sim   |       Sim       |
+| Yup          |  Sim   |       Sim       |
+
 ### Tamanho do bundle e composição de dependências
 
-Ao adicionar qualquer dependência em seu projeto, um fator importante de se saber é o tamanho dela e quais outras dependências estarão sendo adicionadas para o seu funcionamento. Isso porque elas se juntarão ao bundle final da sua aplicação, considerando que ela seja uma dependência para produção. Os dados abaixo são do site BundlePhobia, e apresentam o tamanho do bundle e a composição de dependências de cada lib.
+Ao adicionar qualquer dependência em seu projeto, um fator importante a se considerar é o tamanho dela e quais outras dependências estarão sendo adicionadas para o seu funcionamento. Isso porque elas se juntarão ao bundle final da sua aplicação, caso ela seja uma dependência para produção. Os dados abaixo são do site BundlePhobia, e apresentam o tamanho do bundle e a composição de dependências de cada lib.
 
 ##### Tamanho do bundle
 
@@ -78,7 +88,7 @@ A Formik e a React Hook Form seguem diferentes formas de implementação de form
 | Email    | email | Obrigatório, com formato válido de email    |
 | Telefone | tel   | Obrigatório, com formato válido de telefone |
 
-### Desenvolvendo um formulário com a a lib Formik
+### Desenvolvendo um formulário com a lib Formik
 
 A Formik apresenta duas formas de se desenvolver um formulário, a primeira utilizando os componentes [Formik](https://formik.org/docs/api/formik), [Form](https://formik.org/docs/api/form), e [Field](https://formik.org/docs/api/field), e a segunda utilizando o hook [useFormik()](https://formik.org/docs/api/useFormik). Nesse comparativo eu optei pela utilização do hook pela forma como a implementação se assemelha a criação de um formulário padrão no React.
 
@@ -134,7 +144,7 @@ const FormikExample = () => {
 
 ```
 
-Ao iniciar o `useFormik()` nós passamos os seguintes parâmetros:
+Ao iniciar o `useFormik()` nós passamos as seguintes propriedades:
 
 - `initialValues`: recebe um objeto contendo o nome e o valor inicial de cada campo do formulário.
 - `onSubmit`: recebe um método que será chamado quando o formulário for enviado
@@ -247,7 +257,7 @@ const { register, errors } = useForm()
 <input
   type='text'
   name='name'
-  ref= {register({
+  ref={register({
     required: 'Nome é um campo obrigatório'
   })}
 />
@@ -366,6 +376,44 @@ const ReactHookFormExample = () => {
 }
 ```
 
-Foram gastas ao todo 95 linhas de código, que você pode visualizar [nesse link](https://github.com/thiagosalome/formik-vs-react-hook-form/blob/master/src/components/ReactHookFormExample.tsx).
+Como vocês podem observar as validações são criadas dentro de um objeto passado para o método  `register()`. O React Hook Form já disponibiliza algumas propriedades para validações, como o caso do `required` para campos obrigatórios, e o `min` para validação de números mínimos, bem semelhante [a forma padrão de validação de formulários no HTML](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#using_built-in_form_validation). Para casos mais específicos como validação de email e telefone há a propriedade `validate`.
+
+Para o desenvolvimento desse formulário foram gastas ao todo 95 linhas de código, que você pode visualizar [nesse link](https://github.com/thiagosalome/formik-vs-react-hook-form/blob/master/src/components/ReactHookFormExample.tsx).
+
+------
 
 ## Comparativo de performance
+
+Um ponto importante a se considerar no desenvolvimento de qualquer componente React é a sua performance. E para medi-la nos formulários que criados na seção anterior eu defini duas métricas principais: a quantidade de renderizações que cada formulário terá enquanto o usuário estiver preenchendo-o, e o tempo gasto para o formulário ser renderizado em tela.
+
+Para saber a quantidade de renderizações de cada componente, eu criei uma variável com valor inicial 0 que incrementava a cada vez que formulário renderizava. Abaixo nós podemos ver o resultado de cada um:
+
+### Formik - Quantidade de renderizações
+
+![Formik - Quantidade de renderizações](./github/renderizacoes-formik.gif)
+
+### React Hook Form - Quantidade de renderizações
+
+![React Hook Form - Quantidade de renderizações](./github/renderizacoes-react-hook-form.gif)
+
+Aqui claramente podemos ver que em termos de quantidade de renderização a React Hook Form se destaca se comparada a Formik.
+
+Para calcular o tempo que cada componente leva para ser renderizado na primeira vez, eu utilizei a funcionalidade de Profiler disponibilizada pela extensão [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi).
+
+### Formik - Tempo gasto na primeira renderização
+
+![Formik - Tempo gasto na primeira renderização](./github/tempo-renderizacao-formik.png)
+
+###  React Hook Form - Tempo gasto na primeira renderização
+
+![React Hook Form - Tempo gasto na primeira renderização](./github/tempo-renderizacao-react-hook-form.png)
+
+Com uma diferença de 0.7ms, a Fomik se destaca sobre a React Hook Form no tempo gasto na primeira renderização. É importante ressaltar que esses dados podem variar de acordo com o tamanho do formulário desenvolvido.
+
+------
+
+## Conclusão
+
+Se comparada a forma padrão de desenvolvimento de formulários no React, ambas as libs trazem muitas vantagens. O seu código fica mais enxuto, e você não tem que se preocupar em ficar armazenando os valores em estados. Então no que se refere a parte de desenvolvimento, considero as duas empatadas, por tornarem esse processo mais fácil e por apresentarem uma documentação simples e objetiva.
+
+Já se levarmos em conta o comparativo técnico e de performance, a React Hook Form leva a melhor por ser menor, não conter nenhuma outra dependência externa, e evitar renderizações nas mudanças de valores dos campos, oferecendo mais vantagens do que a Formik.
