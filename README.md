@@ -419,3 +419,13 @@ Com uma diferença de 0.7ms, a Fomik se destaca sobre a React Hook Form no tempo
 Se comparada a forma padrão de desenvolvimento de formulários no React, ambas as libs trazem muitas vantagens. O seu código fica mais enxuto, e você não tem que se preocupar em ficar armazenando os valores em estados. Então no que se refere a parte de desenvolvimento, considero as duas empatadas, por tornarem esse processo mais fácil e por apresentarem uma documentação simples e objetiva.
 
 Já se levarmos em conta o comparativo técnico e de performance, a React Hook Form leva a melhor por ser menor, não conter nenhuma outra dependência externa, e evitar renderizações nas mudanças de valores dos campos, oferecendo mais vantagens do que a Formik.
+
+## Referências
+
+- [Looking for the Best React Form Library in 2021? It’s Probably on This List](https://dev.to/pmbanugo/looking-for-the-best-react-form-library-in-2021-it-s-probably-on-this-list-e2h)
+- [The Best React Form Library To Use In 2020](https://frontend-digest.com/the-best-react-form-library-to-use-in-2020-11e93c267e4)
+- [React Hook Form vs. Formik: A technical and performance comparison](https://blog.logrocket.com/react-hook-form-vs-formik-a-technical-and-performance-comparison/)
+- [React Hook Form VS Formik](https://blog.bitsrc.io/react-hook-form-vs-formik-form-builder-library-for-react-23ed559fdae)
+- [Formik VS React Hook Form Part I](https://dev.to/doaashafik/formik-vs-react-hook-form-aei)
+- [Formik vs React-hook-form Cases Part II](https://dev.to/doaashafik/formik-vs-react-hook-form-cases-part-ii-3ofj)
+
