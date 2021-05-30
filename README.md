@@ -32,7 +32,7 @@ Como se pode notar, com pouco mais de 1.400.000 downloads semanais a Formik apre
 
 ### Informações do Github
 
-Por algum motivo o npm trends não estava apresentando os dados referentes a stars, forks, issues e updated. Por isso optei por buscar os dados diretamente em cada repositório. 
+Por algum motivo o npm trends não estava apresentando os dados referentes a stars, forks, issues e updated. Por isso optei por buscar os dados diretamente em cada repositório.
 
 |               | Formik | React Hook Form |
 | ------------- | :----: | :-------------: |
@@ -150,7 +150,7 @@ Ao iniciar o `useFormik()` nós passamos as seguintes propriedades:
 
 - `initialValues`: recebe um objeto contendo o nome e o valor inicial de cada campo do formulário.
 - `onSubmit`: recebe um método que será chamado quando o formulário for enviado
-- `validate`: recebe um método responsável por realizar a validação dos campos, e retornar um objeto com os erros. 
+- `validate`: recebe um método responsável por realizar a validação dos campos, e retornar um objeto com os erros.
 
 E com ele podemos obter as seguintes variáveis e métodos:
 
@@ -276,7 +276,7 @@ const { register, formState: { errors } } = useForm()
 errors.name?.message
 ```
 
-Nesse comparativo utilizaremos a última versão lançada. Você pode instalá-la utilizando `npm install react-hook-form` ou `yarn add react-hook-form`. 
+Nesse comparativo utilizaremos a última versão lançada. Você pode instalá-la utilizando `npm install react-hook-form` ou `yarn add react-hook-form`.
 
 O React Hook Form disponibiliza um hook chamado [useForm()](https://react-hook-form.com/api/useform). Para o desenvolvimento do formulário nós vamos criar um componente e fazer da seguinte forma:
 
@@ -406,13 +406,26 @@ Para calcular o tempo que cada componente leva para ser renderizado na primeira 
 
 ![Formik - Tempo gasto na primeira renderização](./github/tempo-renderizacao-formik.png)
 
-###  React Hook Form - Tempo gasto na primeira renderização
+### React Hook Form - Tempo gasto na primeira renderização
 
 ![React Hook Form - Tempo gasto na primeira renderização](./github/tempo-renderizacao-react-hook-form.png)
 
 Com uma diferença de 0.7ms, a Fomik se destaca sobre a React Hook Form no tempo gasto na primeira renderização. É importante ressaltar que esses dados podem variar de acordo com o tamanho do formulário desenvolvido.
 
 ------
+
+## Resultado
+
+Abaixo você pode ver o resultado do desenvolvimento e comparar a quantidade de renderizações presentes em cada tipo de formulário. Como extra adicionei um formulário desenvolvido utilizando o conceito de Controlled Components.
+
+<iframe src="https://codesandbox.io/embed/confident-swartz-thzmo?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="confident-swartz-thzmo"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+[Link do projeto](https://thzmo.csb.app/)
 
 ## Conclusão
 
@@ -428,4 +441,3 @@ Já se levarmos em conta o comparativo técnico e de performance, a React Hook F
 - [React Hook Form VS Formik](https://blog.bitsrc.io/react-hook-form-vs-formik-form-builder-library-for-react-23ed559fdae)
 - [Formik VS React Hook Form Part I](https://dev.to/doaashafik/formik-vs-react-hook-form-aei)
 - [Formik vs React-hook-form Cases Part II](https://dev.to/doaashafik/formik-vs-react-hook-form-cases-part-ii-3ofj)
-
