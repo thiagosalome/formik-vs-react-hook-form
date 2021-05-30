@@ -16,7 +16,7 @@ O comparativo técnico foi desenvolvido com base na análise de dados do [npm tr
 
 Abaixo é apresentado um gráfico com a quantidade de downloads das libs por semana no período de um ano.
 
-![Quantidade de downloads nos últimos 3 meses](./github/quantidade-de-downloads.png)
+![Quantidade de downloads nos últimos 3 meses](https://github.com/thiagosalome/formik-vs-react-hook-form/raw/master/github/quantidade-de-downloads.png)
 
 Como se pode notar, com pouco mais de 1.400.000 downloads semanais a Formik apresenta maior popularidade se comparada aos quase 800.000 downloads da React Hook Form. Considerando esse período de um ano, pode-se concluir que ambas possuem um índice bem próximo de crescimento, sendo que um ano atrás a Formik apresentava aproximadamente 865.000 e a React Hook Form 220.000. Na tabela abaixo podemos comparar os dados mais precisamente.
 
@@ -28,7 +28,7 @@ Como se pode notar, com pouco mais de 1.400.000 downloads semanais a Formik apre
 
 **Curiosidade:** Eu me perguntei o porquê dessa queda brusca na quantidade de downloads no gráfico no período entre Dezembro e Janeiro. Então aumentei o período para 5 anos, e reparei que o mesmo comportamento se repetia, mais precisamente nas semanas do dia 23 de Dezembro ao dia 1 de Janeiro. Não é coincidência que sejam períodos em que se comemoram o Natal e Ano Novo.
 
-![Quantidade de Downloads nos últimos 5 anos](./github/quantidade-downloads-5-anos.png)
+![Quantidade de Downloads nos últimos 5 anos](https://github.com/thiagosalome/formik-vs-react-hook-form/raw/master/github/quantidade-downloads-5-anos.png)
 
 ### Informações do Github
 
@@ -69,11 +69,11 @@ Ao adicionar qualquer dependência em seu projeto, um fator importante a se cons
 
 ##### Composição de dependências da Formik
 
-![Composição de dependências da Formik](./github/composition-formik.png)
+![Composição de dependências da Formik](https://github.com/thiagosalome/formik-vs-react-hook-form/raw/master/github/composition-formik.png)
 
 ##### Composição de dependências da React Hook Form
 
-![Composição de dependências da React Hook Form](./github/composition-react-hook-form.png)
+![Composição de dependências da React Hook Form](https://github.com/thiagosalome/formik-vs-react-hook-form/raw/master/github/composition-react-hook-form.png)
 
 Pode-se concluir que a React Hook Form venceu em ambas as métricas, tanto no tamanho do bundle, apresentando uma diferença de quase 5kb a menos se comparada com a Formik, quanto na composição de módulos, apresentando 0 dependências contra 7 da Formik.
 
@@ -392,11 +392,11 @@ Para saber a quantidade de renderizações de cada componente, eu criei uma vari
 
 ### Formik - Quantidade de renderizações
 
-![Formik - Quantidade de renderizações](./github/renderizacoes-formik.gif)
+![Formik - Quantidade de renderizações](https://github.com/thiagosalome/formik-vs-react-hook-form/raw/master/github/renderizacoes-formik.gif)
 
 ### React Hook Form - Quantidade de renderizações
 
-![React Hook Form - Quantidade de renderizações](./github/renderizacoes-react-hook-form.gif)
+![React Hook Form - Quantidade de renderizações](https://github.com/thiagosalome/formik-vs-react-hook-form/raw/master/github/renderizacoes-react-hook-form.gif)
 
 Aqui claramente podemos ver que em termos de quantidade de renderização a React Hook Form se destaca se comparada a Formik, tendo apenas 1 contra 74.
 
@@ -404,11 +404,11 @@ Para calcular o tempo que cada componente leva para ser renderizado na primeira 
 
 ### Formik - Tempo gasto na primeira renderização
 
-![Formik - Tempo gasto na primeira renderização](./github/tempo-renderizacao-formik.png)
+![Formik - Tempo gasto na primeira renderização](https://github.com/thiagosalome/formik-vs-react-hook-form/raw/master/github/tempo-renderizacao-formik.png)
 
 ### React Hook Form - Tempo gasto na primeira renderização
 
-![React Hook Form - Tempo gasto na primeira renderização](./github/tempo-renderizacao-react-hook-form.png)
+![React Hook Form - Tempo gasto na primeira renderização](https://github.com/thiagosalome/formik-vs-react-hook-form/raw/master/github/tempo-renderizacao-react-hook-form.png)
 
 Com uma diferença de 0.7ms, a Fomik se destaca sobre a React Hook Form no tempo gasto na primeira renderização. É importante ressaltar que esses dados podem variar de acordo com o tamanho do formulário desenvolvido.
 
