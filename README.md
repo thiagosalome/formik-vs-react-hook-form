@@ -418,13 +418,6 @@ Com uma diferença de 0.7ms, a Fomik se destaca sobre a React Hook Form no tempo
 
 Abaixo você pode ver o resultado do desenvolvimento e comparar a quantidade de renderizações presentes em cada tipo de formulário. Como extra adicionei um formulário desenvolvido utilizando o conceito de Controlled Components.
 
-<iframe src="https://codesandbox.io/embed/confident-swartz-thzmo?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="confident-swartz-thzmo"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
-
 [Link do projeto](https://thzmo.csb.app/)
 
 ## Conclusão
