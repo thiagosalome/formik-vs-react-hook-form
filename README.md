@@ -46,7 +46,7 @@ Novamente aqui a Formik demonstra uma maior popularidade considerando a quantida
 
 ### Integração e suporte
 
-Analisando a documentação das libs é possível ver que ambas apresentam suporte e integração com diversas outras linguagens, ferramentes do mundo Front-end.
+Analisando a documentação das libs é possível ver que ambas apresentam suporte e integração com diversas outras linguagens e ferramentes do mundo Front-end.
 
 |              | Formik | React Hook Form |
 | ------------ | :----: | :-------------: |
