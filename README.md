@@ -370,9 +370,6 @@ const ReactHookFormExample = () => {
         <span className='error'>{errors.phone?.message}</span>
       </div>
       <button type='submit'>Enviar</button>
-      <div className='rendering'>
-        Renderizações: {renderingCounter}
-      </div>
     </form>
   )
 }
